@@ -153,13 +153,16 @@ def EquationWithNumbers(subject, without=None):
 
     for k in range(len(Equations)):
         if "math.sqrt" in Equations[k]:
-            Equations[k] = Equations[k].split("math.sqrt")
+            equation = Equations[k].split("math.sqrt")
+            for i in range(len(equation)):
+                for j in variables.values():
+                    equation[i] = equation[i].replace(j,str(eval(j)))
+            Equations[k] = "math.sqrt".join(equation)
 
-        for i in range(len(Equations[k])):
-            for j in variables.values():
-                Equations[k][i] = Equations[k][i].replace(j,str(eval(j)))
-                
-        Equations[k] = "math.sqrt".join(Equations[k])
+        else:
+            for i in range(len(Equations)): 
+                for j in variables.values():
+                    Equations[i] = Equations[i].replace(j,str(eval(j)))
 
 
     return Equations
