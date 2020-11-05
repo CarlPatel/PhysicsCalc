@@ -10,10 +10,11 @@ app = Flask(__name__)
 
 def unit():
     """
-    link: www.api.com/api/forces?force=1&mass=2
+    link: www.api.com/api?force=1&mass=2
     http://localhost:5000/api?unit=kinomatics&final%20velocity=3&displacement=3&initial%20velocity=-4
     http://localhost:5000/api?unit=forces&acceleration=2&force=3
     http://localhost:5000/api?unit=gravitation&mass1=2&radius=3&mass2=5
+
     https://physicscatalyst.com/calculators/physics/kinematics-calculator.php
     """
     global file, unit
@@ -149,9 +150,17 @@ def EquationWithNumbers(subject, without=None):
     else:
         Equations = getEquation(subject)
 
-    for i in range(len(Equations)):
-        for j in variables.values():
-            Equations[i] = Equations[i].replace(j,str(eval(j)))
+
+    for k in range(len(Equations)):
+        if "math.sqrt" in Equations[k]:
+            Equations[k] = Equations[k].split("math.sqrt")
+
+        for i in range(len(Equations[k])):
+            for j in variables.values():
+                Equations[k][i] = Equations[k][i].replace(j,str(eval(j)))
+                
+        Equations[k] = "math.sqrt".join(Equations[k])
+
 
     return Equations
 
