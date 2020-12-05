@@ -61,9 +61,9 @@
     "gravitation":{
         "equations":{
             "force":"((6.67*pow(10,-11))*m1*m2)/(r*r)",
-            "mass1":"0",
-            "mass2":"0",
-            "radius":"0"
+            "mass1":"(f*(r*r))/(m2*(6.67*pow(10,-11)))",
+            "mass2":"(f*(r*r))/(m1*(6.67*pow(10,-11)))",
+            "radius":"math.sqrt(((6.67*pow(10,-11))*m1*m2)/f)"
         },
         "variables":{
             "necessary":3,
@@ -72,6 +72,38 @@
                 "mass1":"m1",
                 "mass2":"m2",
                 "radius":"r"
+            }
+        }
+    },
+    "centripetal":{
+        "equations":{
+            "force":"(m*(v*v))/r",
+            "mass":"(f*r)/(v*v)",
+            "velocity":"math.sqrt((f*r)/m)",
+            "radius":"(m*(v*v))/f"
+        },
+        "variables":{
+            "necessary":3,
+            "type":{
+                "force":"f",
+                "mass":"m",
+                "velocity":"v",
+                "radius":"r"
+            }
+        }
+    },
+    "work":{
+        "equations":{
+            "work":"F*s",
+            "force":"W/s",
+            "displacement":"W/F"
+        },
+        "variables":{
+            "necessary":2,
+            "type":{
+                "work":"W",
+                "force":"F",
+                "displacement":"s"
             }
         }
     }

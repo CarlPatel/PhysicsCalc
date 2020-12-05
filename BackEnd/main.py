@@ -40,6 +40,9 @@ def only1Ans():
     for i,j in variables.items():
 
         globals()[j] = request.args.get(i)
+        if (globals()[j]=="null"):
+            globals()[j]=None
+
         variableDict[i] = ((globals()[j]))
 
         if globals()[j] != None and (globals()[j].isnumeric() or (globals()[j][1:].isnumeric() and globals()[j][0] == "-")):
@@ -63,6 +66,8 @@ def only1Ans():
 
         try:
             ans = (eval(getEquation(subject)[0]))
+            if ans < 0.0001 and not ans == 0:
+                ans = "{:.4e}".format(ans)
         except:
             return response(400,"Error")
 
@@ -171,12 +176,14 @@ def EquationWithNumbers(subject, without=None):
 def format(solvedFor1, ans1, equation, equationwithnumbers, solvedFor2=None, ans2=None):
     if unit == "kinomatics":
         return jsonify({
+            "Status":"success",
             "Answers":{solvedFor1: ans1, solvedFor2: ans2},
             "Equations":{solvedFor1:equation[0],solvedFor2:equation[1]},
             "Equations with Numbers":{solvedFor1:equationwithnumbers[0],solvedFor2:equationwithnumbers[1]},
             })
     else:
         return jsonify({
+            "Status":"success",
             "Answer":{solvedFor1: ans1},
             "Equation":{solvedFor1:equation[0]},
             "Equation with Numbers":{solvedFor1:equationwithnumbers[0]},
@@ -185,7 +192,7 @@ def format(solvedFor1, ans1, equation, equationwithnumbers, solvedFor2=None, ans
 
 def response(code, data):
     if code == 400:
-        r = make_response(jsonify({"Error": data}), code)
+        r = make_response(jsonify({"Status":"fail","Error": data}), code)
     else:
         r = make_response(data, code)
 
@@ -195,5 +202,6 @@ def response(code, data):
 
 
 if __name__ == "__main__":
-    app.run("localhost", 5000, debug=True)
+    app.debug = True
+    app.run("localhost", 5000)
     
