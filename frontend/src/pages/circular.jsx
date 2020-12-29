@@ -5,6 +5,56 @@ import { Container, Form, Button } from 'semantic-ui-react';
 
 class Circular extends React.Component{
 
+	constructor(props) {
+		super(props);
+		this.state = {force:null, mass:null, velocity:null, radius:null, solvedFor:null, answer: null, equation:null, equationWithNumbers:null, error:null};
+	}
+
+	onChange = (e) => {
+		this.setState({[e.target.name]: e.target.value});
+	}
+
+
+	onSubmit = () => {
+		var force = this.state.force;
+		var mass = this.state.mass;
+		var velocity = this.state.velocity;
+		var radius = this.state.radius;
+
+
+	if (force==null || force==="") {
+		force="null";
+	}
+	if (mass==null || mass==="") {
+		mass="null";
+	}
+	if (velocity==null || velocity==="") {
+		velocity="null";
+	}
+	if (radius==null || radius==="") {
+		radius="null";
+	}
+
+	var parameters = "?".concat("unit=circular&force=", force, "&mass=", mass, "&velocity=", velocity, "&radius=", radius);
+
+
+	var url = "http://localhost:5000/api".concat(parameters);
+
+	fetch(url, {method:"GET", credentials: "include"})
+		.then((response) => response.json())
+			.then(
+				(result) => {
+					this.setState({
+						solvedFor:result.SolvedFor,
+						answer:result.Answer,
+						equation:result.Equation,
+						equationWithNumbers:result.EquationWithNumbers,
+						error:result.Error
+					});
+				});
+
+}
+
 
 	render() {
 
@@ -33,6 +83,17 @@ class Circular extends React.Component{
 
 					<Button type='submit' color='blue' style={mystyle}>Calculate</Button>
 				</Form>
+
+
+
+				<br />
+
+				<p style={{color: 'white', fontSize:20, textTransform:'capitalize'}}> {this.state.solvedFor} </p>
+				<p style={{color: 'white'}}> {this.state.answer} </p>
+				<p style={{color: 'white'}}> {this.state.equation} </p>
+				<p style={{color: 'white'}}> {this.state.equationWithNumbers} </p>
+				<p style={{color: 'red', fontSize:20}}> {this.state.error} </p>
+
 
 
     		</Container>

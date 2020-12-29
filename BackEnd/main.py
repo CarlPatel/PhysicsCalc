@@ -1,10 +1,17 @@
 from flask import Flask, request, jsonify, make_response, json
+from flask_cors import CORS, cross_origin
 import math
+
+
+
+
 
 app = Flask(__name__)
 #app.secret_key = "asdf"
 
 @app.route("/api", methods=["GET"])
+
+@cross_origin(supports_credentials=True)
 
 
 
@@ -91,6 +98,9 @@ def kinomatics():
     for i,j in variables.items():
 
         globals()[j] = request.args.get(i)
+        if (globals()[j]=="null"):
+            globals()[j]=None
+
         variableDict[i] = ((globals()[j]))
 
         if globals()[j] != None and (globals()[j].replace(".","").isnumeric() or (globals()[j][1:].replace(".","").isnumeric() and globals()[j][0] == "-")):
@@ -177,16 +187,22 @@ def format(solvedFor1, ans1, equation, equationwithnumbers, solvedFor2=None, ans
     if unit == "kinomatics":
         return jsonify({
             "Status":"success",
-            "Answers":{solvedFor1: ans1, solvedFor2: ans2},
-            "Equations":{solvedFor1:equation[0],solvedFor2:equation[1]},
-            "Equations with Numbers":{solvedFor1:equationwithnumbers[0],solvedFor2:equationwithnumbers[1]},
+            "SolvedFor1": str(solvedFor1),
+            "SolvedFor2": str(solvedFor2),
+            "Answer1":str(ans1),
+            "Answer2":str(ans2),
+            "Equation1":str(equation[0]),
+            "Equation2":str(equation[1]),
+            "EquationWithNumbers1":str(equationwithnumbers[0]),
+            "EquationWithNumbers2":str(equationwithnumbers[1]),
             })
     else:
         return jsonify({
             "Status":"success",
-            "Answer":{solvedFor1: ans1},
-            "Equation":{solvedFor1:equation[0]},
-            "Equation with Numbers":{solvedFor1:equationwithnumbers[0]},
+            "SolvedFor": str(solvedFor1),
+            "Answer":str(ans1),
+            "Equation":str(equation[0]),
+            "EquationWithNumbers":str(equationwithnumbers[0]),
             })
 
 

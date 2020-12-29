@@ -46,13 +46,13 @@
     "forces":{
         "equations":{
             "force":"m*a",
-            "mass":"f/a",
-            "acceleration":"f/m"
+            "mass":"F/a",
+            "acceleration":"F/m"
         },
         "variables":{
             "necessary":2,
             "type":{
-                "force":"f",
+                "force":"F",
                 "mass":"m",
                 "acceleration":"a"
             }
@@ -75,7 +75,7 @@
             }
         }
     },
-    "centripetal":{
+    "circular":{
         "equations":{
             "force":"(m*(v*v))/r",
             "mass":"(f*r)/(v*v)",

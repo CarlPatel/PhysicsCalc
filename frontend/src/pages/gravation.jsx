@@ -5,6 +5,56 @@ import { Container, Form, Button } from 'semantic-ui-react';
 
 class Gravation extends React.Component{
 
+	constructor(props) {
+		super(props);
+		this.state = {force:null, mass1:null, mass2:null, radius:null, solvedFor:null, answer: null, equation:null, equationWithNumbers:null, error:null};
+	}
+
+	onChange = (e) => {
+		this.setState({[e.target.name]: e.target.value});
+	}
+
+
+	onSubmit = () => {
+		var force = this.state.force;
+		var mass1 = this.state.mass1;
+		var mass2 = this.state.mass2;
+		var radius = this.state.radius;
+
+
+	if (force==null || force ==="") {
+		force="null";
+	}
+	if (mass1==null || mass1==="") {
+		mass1="null";
+	}
+	if (mass2==null || mass2==="") {
+		mass2="null";
+	}
+	if (radius==null || radius==="") {
+		radius="null";
+	}
+
+	var parameters = "?".concat("unit=gravitation&force=", force, "&mass1=", mass1, "&mass2=", mass2, "&radius=", radius);
+
+
+	var url = "http://localhost:5000/api".concat(parameters);
+
+	fetch(url, {method:"GET", credentials: "include"})
+		.then((response) => response.json())
+			.then(
+				(result) => {
+					this.setState({
+						solvedFor:result.SolvedFor,
+						answer:result.Answer,
+						equation:result.Equation,
+						equationWithNumbers:result.EquationWithNumbers,
+						error:result.Error
+					});
+				});
+
+}
+
 
 	render() {
 
@@ -18,7 +68,7 @@ class Gravation extends React.Component{
 
         		<Header />
 
-        		<p style={{color: 'white', fontSize:20}}> Universal Gravation </p>
+        		<p style={{color: 'white', fontSize:30}}> Universal Gravation </p>
 
 
         		<Form onSubmit={this.onSubmit}>
@@ -34,6 +84,16 @@ class Gravation extends React.Component{
 
 					<Button type='submit' color='blue' style={mystyle}>Calculate</Button>
 				</Form>
+
+
+
+				<br />
+
+				<p style={{color: 'white', fontSize:20, textTransform:'capitalize'}}> {this.state.solvedFor} </p>
+				<p style={{color: 'white'}}> {this.state.answer} </p>
+				<p style={{color: 'white'}}> {this.state.equation} </p>
+				<p style={{color: 'white'}}> {this.state.equationWithNumbers} </p>
+				<p style={{color: 'red', fontSize:20}}> {this.state.error} </p>
 
 
 
