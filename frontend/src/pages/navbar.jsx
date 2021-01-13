@@ -92,6 +92,8 @@ class NavBar extends React.Component{
 
 
 
+
+
 				<Grid.Row only="mobile">
 
 					<Menu widths={2} inverted borderless secondary>
@@ -147,7 +149,8 @@ class NavBar extends React.Component{
 								to="/work"
 								>
 									Work
-							</Dropdown.Item>
+								</Dropdown.Item>
+								
 							</Dropdown.Menu>
 						</Dropdown>
 

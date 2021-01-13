@@ -117,6 +117,8 @@ class Kinomatics extends React.Component{
 					</Grid.Column>
 				</Grid>
 
+				<br />
+
 
 
 

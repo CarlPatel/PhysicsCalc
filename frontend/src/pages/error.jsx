@@ -10,7 +10,9 @@ class InvalidPage extends React.Component{
 
 				<Header />
 
-				<p style={{color: 'white', fontSize:72}}> 404 Error </p>
+				<p style={{color: 'white', fontSize:72, margin: 0}}> 404 Error </p>
+
+				<p style={{color: 'white', fontSize:36}}> Page Not Found </p>
 
 			</Container>
 
