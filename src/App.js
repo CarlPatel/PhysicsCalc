@@ -24,16 +24,16 @@ class App extends React.Component{
       <div style={{backgroundColor: '#1b1c1d', minHeight: "100vh", height: "auto"}}>
       <Router>
         <Switch>
-          <Route exact path="/" component={IndexPage} />
-          <Route exact path="/equations" component={Equations} />
-          <Route exact path="/forces" component={Forces} />
-          <Route exact path="/kinomatics" component={Kinomatics} />
-          <Route exact path="/circular" component={Circular} />
-          <Route exact path="/gravation" component={Gravation} />
-          <Route exact path="/work" component={Work} />
+          <Route exact path="/PhysicsCalc" component={IndexPage} />
+          <Route exact path="/PhysicsCalc/equations" component={Equations} />
+          <Route exact path="/PhysicsCalc/forces" component={Forces} />
+          <Route exact path="/PhysicsCalc/kinomatics" component={Kinomatics} />
+          <Route exact path="/PhysicsCalc/circular" component={Circular} />
+          <Route exact path="/PhysicsCalc/gravation" component={Gravation} />
+          <Route exact path="/PhysicsCalc/work" component={Work} />
 
-          <Route exact path="/404" component={InvalidPage} />
-          <Redirect to="/404" />
+          <Route exact path="/PhysicsCalc/404" component={InvalidPage} />
+          <Redirect to="/PhysicsCalc/404" />
         </Switch>
       </Router>
       </div>
