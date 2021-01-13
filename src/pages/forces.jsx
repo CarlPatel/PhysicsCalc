@@ -35,7 +35,7 @@ class Force extends React.Component{
 	var parameters = "?".concat("unit=forces&force=", force, "&mass=", mass, "&acceleration=", acceleration);
 
 
-	var url = "http://localhost:5000/api".concat(parameters);
+	var url = "https://physicscalcapi.herokuapp.com/api".concat(parameters);
 
 	fetch(url, {method:"GET", credentials: "include"})
 		.then((response) => response.json())

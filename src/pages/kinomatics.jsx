@@ -42,7 +42,7 @@ class Kinomatics extends React.Component{
 	var parameters = "?".concat("unit=kinomatics&displacement=", displacement, "&initial%20velocity=", initialVelocity, "&final%20velocity=", finalVelocity, "&acceleration=", acceleration, "&time=", time);
 
 
-	var url = "http://localhost:5000/api".concat(parameters);
+	var url = "https://physicscalcapi.herokuapp.com/api".concat(parameters);
 
 	fetch(url, {method:"GET", credentials: "include"})
 		.then((response) => response.json())

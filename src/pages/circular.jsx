@@ -38,7 +38,7 @@ class Circular extends React.Component{
 	var parameters = "?".concat("unit=circular&force=", force, "&mass=", mass, "&velocity=", velocity, "&radius=", radius);
 
 
-	var url = "http://localhost:5000/api".concat(parameters);
+	var url = "https://physicscalcapi.herokuapp.com/api".concat(parameters);
 
 	fetch(url, {method:"GET", credentials: "include"})
 		.then((response) => response.json())
