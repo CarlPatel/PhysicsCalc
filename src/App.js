@@ -24,7 +24,7 @@ class App extends React.Component{
       <div style={{backgroundColor: '#1b1c1d', minHeight: "100vh", height: "auto"}}>
       <Router>
         <Switch>
-          <Route exact path="/PhysicsCalc" component={IndexPage} />
+          <Route exact path="/PhysicsCalc/" component={IndexPage} />
           <Route exact path="/PhysicsCalc/equations" component={Equations} />
           <Route exact path="/PhysicsCalc/forces" component={Forces} />
           <Route exact path="/PhysicsCalc/kinomatics" component={Kinomatics} />
