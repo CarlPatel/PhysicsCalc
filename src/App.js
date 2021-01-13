@@ -14,7 +14,7 @@ import Equations from "./pages/equations";
 import Forces from "./pages/forces";
 import Kinomatics from "./pages/kinomatics";
 import Circular from "./pages/circular";
-import Gravation from "./pages/gravation"ź
+import Gravation from "./pages/gravation";
 import Work from "./pages/work";
 
 
