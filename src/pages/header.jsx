@@ -12,7 +12,7 @@ class Header extends React.Component{
 				<br />
 				<br />
 
-				<a href="/" style={{color: 'white', fontSize:36}}> Physics Calculator </a>
+				<a href="/PhysicsCalc" style={{color: 'white', fontSize:36}}> Physics Calculator </a>
 
 				<br />
 				<br />
