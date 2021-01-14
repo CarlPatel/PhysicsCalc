@@ -23,7 +23,7 @@ class IndexPage extends React.Component{
 
 				<Header />
 
-				<Button size='massive' inverted as={Link} to="/forces" style={style}>
+				<Button size='massive' inverted as={Link} to={process.env.PUBLIC_URL + "/forces"} style={style}>
 					Forces
 				</Button>
 
@@ -31,7 +31,7 @@ class IndexPage extends React.Component{
 				<br />
 				<br />
 
-				<Button size='massive' inverted as={Link} to="/kinomatics" style={style}>
+				<Button size='massive' inverted as={Link} to={process.env.PUBLIC_URL + "/kinomatics"} style={style}>
 					Kinomatics
 				</Button>
 
@@ -39,7 +39,7 @@ class IndexPage extends React.Component{
 				<br />
 				<br />
 
-				<Button size='massive' inverted as={Link} to="/circular" style={style}>
+				<Button size='massive' inverted as={Link} to={process.env.PUBLIC_URL + "/circular"} style={style}>
 					Circular Motion
 				</Button>
 
@@ -47,7 +47,7 @@ class IndexPage extends React.Component{
 				<br />
 				<br />
 
-				<Button size='massive' inverted as={Link} to="/gravation" style={style}>
+				<Button size='massive' inverted as={Link} to={process.env.PUBLIC_URL + "/gravation"} style={style}>
 					Universal Gravation
 				</Button>
 
@@ -55,7 +55,7 @@ class IndexPage extends React.Component{
 				<br />
 				<br />
 
-				<Button size='massive' inverted as={Link} to="/work" style={style}>
+				<Button size='massive' inverted as={Link} to={process.env.PUBLIC_URL + "/work"} style={style}>
 					Work
 				</Button>
 
@@ -63,7 +63,7 @@ class IndexPage extends React.Component{
 				<br />
 				<br />
 
-				<Button size='massive' inverted as={Link} to="/equations" style={style}>
+				<Button size='massive' inverted as={Link} to={process.env.PUBLIC_URL + "/equations"} style={style}>
 					Equations
 				</Button>
 
