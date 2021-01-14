@@ -14,7 +14,8 @@ class IndexPage extends React.Component{
 	render() {
 
 	const style = {
-		width: "50%"
+		width: "50%",
+		minWidth: "250px"
 	};
 
 		return (
