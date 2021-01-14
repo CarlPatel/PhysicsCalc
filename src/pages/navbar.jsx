@@ -31,7 +31,7 @@ class NavBar extends React.Component{
 							active={activeItem === 'forces'}
 							onClick={this.handleItemClick}
 							as={Link}
-							to="/forces"
+							to={process.env.PUBLIC_URL + "/forces"}
 						>
 				        	Forces
 						</Menu.Item>
@@ -41,7 +41,7 @@ class NavBar extends React.Component{
 						active={activeItem === 'kinomatics'}
 						onClick={this.handleItemClick}
 						as={Link}
-						to="/kinomatics"
+						to={process.env.PUBLIC_URL + "/kinomatics"}
 						>
 							Kinomatics
 						</Menu.Item>
@@ -51,7 +51,7 @@ class NavBar extends React.Component{
 						active={activeItem === 'Circular Motion'}
 						onClick={this.handleItemClick}
 						as={Link}
-						to="/circular"
+						to={process.env.PUBLIC_URL + "/circular"}
 						>
 							Circular Motion
 						</Menu.Item>
@@ -61,7 +61,7 @@ class NavBar extends React.Component{
 						active={activeItem === 'Universal Gravation'}
 						onClick={this.handleItemClick}
 						as={Link}
-						to="/gravation"
+						to={process.env.PUBLIC_URL + "/gravation"}
 						>
 							Universal Gravation
 						</Menu.Item>
@@ -71,7 +71,7 @@ class NavBar extends React.Component{
 						active={activeItem === 'Work'}
 						onClick={this.handleItemClick}
 						as={Link}
-						to="/work"
+						to={process.env.PUBLIC_URL + "/work"}
 						>
 							Work
 						</Menu.Item>
@@ -81,7 +81,7 @@ class NavBar extends React.Component{
 						active={activeItem === 'Equations'}
 						onClick={this.handleItemClick}
 						as={Link}
-						to="/equations"
+						to={process.env.PUBLIC_URL + "/equations"}
 						>
 							Equations
 						</Menu.Item>
@@ -106,7 +106,7 @@ class NavBar extends React.Component{
 								active={activeItem === 'Forces'}
 								onClick={this.handleItemClick}
 								as={Link}
-								to="/Forces"
+								to={process.env.PUBLIC_URL + "/forces"}
 								>
 									Forces
 								</Dropdown.Item>
@@ -116,7 +116,7 @@ class NavBar extends React.Component{
 								active={activeItem === 'Kinomatics'}
 								onClick={this.handleItemClick}
 								as={Link}
-								to="/kinomatics"
+								to={process.env.PUBLIC_URL + "/kinomatics"}
 								>
 									Kinomatics
 								</Dropdown.Item>
@@ -127,7 +127,7 @@ class NavBar extends React.Component{
 								active={activeItem === 'Circular Motion'}
 								onClick={this.handleItemClick}
 								as={Link}
-								to="/circular"
+								to={process.env.PUBLIC_URL + "/circular"}
 								>
 									Circular Motion
 								</Dropdown.Item>
@@ -137,7 +137,7 @@ class NavBar extends React.Component{
 								active={activeItem === 'Universal Gravation'}
 								onClick={this.handleItemClick}
 								as={Link}
-								to="/gravation"
+								to={process.env.PUBLIC_URL + "/gravation"}
 								>
 									Universal Gravation
 								</Dropdown.Item>
@@ -146,7 +146,7 @@ class NavBar extends React.Component{
 								active={activeItem === 'Work'}
 								onClick={this.handleItemClick}
 								as={Link}
-								to="/work"
+								to={process.env.PUBLIC_URL + "/work"}
 								>
 									Work
 								</Dropdown.Item>
@@ -160,7 +160,7 @@ class NavBar extends React.Component{
 						active={activeItem === 'Equations'}
 						onClick={this.handleItemClick}
 						as={Link}
-						to="/equations"
+						to={process.env.PUBLIC_URL + "/equations"}
 						>
 							Equations
 						</Menu.Item>
