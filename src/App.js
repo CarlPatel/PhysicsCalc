@@ -32,8 +32,8 @@ class App extends React.Component{
           <Route exact path={process.env.PUBLIC_URL + "/gravation"} component={Gravation} />
           <Route exact path={process.env.PUBLIC_URL + "/work"} component={Work} />
 
-          <Route exact path="/404" component={InvalidPage} />
-          <Redirect to="/404" />
+          <Route exact path={process.env.PUBLIC_URL + "/404"} component={InvalidPage} />
+          <Redirect to={process.env.PUBLIC_URL + "/404"} />
         </Switch>
       </Router>
       </div>
