@@ -39,7 +39,7 @@ class Kinematics extends React.Component{
 		time="null";
 	}
 
-	var parameters = "?".concat("unit=kinomatics&displacement=", displacement, "&initial%20velocity=", initialVelocity, "&final%20velocity=", finalVelocity, "&acceleration=", acceleration, "&time=", time);
+	var parameters = "?".concat("unit=kinematics&displacement=", displacement, "&initial%20velocity=", initialVelocity, "&final%20velocity=", finalVelocity, "&acceleration=", acceleration, "&time=", time);
 
 
 	var url = "https://physicscalcapi.herokuapp.com/api".concat(parameters);

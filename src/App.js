@@ -27,7 +27,7 @@ class App extends React.Component{
           <Route exact path="/" component={IndexPage} />
           <Route exact path="/equations" component={Equations} />
           <Route exact path="/forces" component={Forces} />
-          <Route exact path="/kinematics" component={Kinomatics} />
+          <Route exact path="/kinematics" component={Kinematics} />
           <Route exact path="/circular" component={Circular} />
           <Route exact path="/gravation" component={Gravation} />
           <Route exact path="/work" component={Work} />
