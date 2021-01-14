@@ -23,7 +23,7 @@ class Equations extends React.Component{
 							<Table.Cell>F = m*a</Table.Cell>
 						</Table.Row>
 						<Table.Row>
-							<Table.Cell style={{fontSize:20}}>Kinoamtics</Table.Cell>
+							<Table.Cell style={{fontSize:20}}>Kineamtics</Table.Cell>
 							<Table.Cell>
 								fv = iv + a*t
 								<br />

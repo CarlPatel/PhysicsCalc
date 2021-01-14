@@ -32,8 +32,8 @@ class IndexPage extends React.Component{
 				<br />
 				<br />
 
-				<Button size='massive' inverted as={Link} to="/kinomatics" style={style}>
-					Kinomatics
+				<Button size='massive' inverted as={Link} to="/kinematics" style={style}>
+					Kinematics
 				</Button>
 
 				<br />

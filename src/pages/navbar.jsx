@@ -37,13 +37,13 @@ class NavBar extends React.Component{
 						</Menu.Item>
 
 						<Menu.Item
-						name='kinomatics'
-						active={activeItem === 'kinomatics'}
+						name='kinematics'
+						active={activeItem === 'kinematics'}
 						onClick={this.handleItemClick}
 						as={Link}
-						to="/kinomatics"
+						to="/kinematics"
 						>
-							Kinomatics
+							Kinematics
 						</Menu.Item>
 
 						<Menu.Item
@@ -112,13 +112,13 @@ class NavBar extends React.Component{
 								</Dropdown.Item>
 
 								<Dropdown.Item
-								name='Kinomatics'
-								active={activeItem === 'Kinomatics'}
+								name='Kinematics'
+								active={activeItem === 'Kinematics'}
 								onClick={this.handleItemClick}
 								as={Link}
-								to="/kinomatics"
+								to="/kinematics"
 								>
-									Kinomatics
+									Kinematics
 								</Dropdown.Item>
 
 

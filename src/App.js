@@ -12,7 +12,7 @@ import IndexPage from "./pages/index";
 import InvalidPage from "./pages/error";
 import Equations from "./pages/equations";
 import Forces from "./pages/forces";
-import Kinomatics from "./pages/kinomatics";
+import Kinematics from "./pages/kinematics";
 import Circular from "./pages/circular";
 import Gravation from "./pages/gravation";
 import Work from "./pages/work";
@@ -27,7 +27,7 @@ class App extends React.Component{
           <Route exact path="/" component={IndexPage} />
           <Route exact path="/equations" component={Equations} />
           <Route exact path="/forces" component={Forces} />
-          <Route exact path="/kinomatics" component={Kinomatics} />
+          <Route exact path="/kinematics" component={Kinomatics} />
           <Route exact path="/circular" component={Circular} />
           <Route exact path="/gravation" component={Gravation} />
           <Route exact path="/work" component={Work} />

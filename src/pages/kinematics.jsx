@@ -3,7 +3,7 @@ import 'semantic-ui-css/semantic.min.css';
 import Header from "./header";
 import { Container, Form, Button, Grid } from 'semantic-ui-react';
 
-class Kinomatics extends React.Component{
+class Kinematics extends React.Component{
 
 	constructor(props) {
 		super(props);
@@ -77,7 +77,7 @@ class Kinomatics extends React.Component{
 
         		<Header />
 
-        		<p style={{color: 'white', fontSize:30}}> Kinomatics </p>
+        		<p style={{color: 'white', fontSize:30}}> Kinematics </p>
 
 
         		<Form onSubmit={this.onSubmit}>
@@ -133,4 +133,4 @@ class Kinomatics extends React.Component{
 }
 
 
-export default Kinomatics;
+export default Kinematics;
