@@ -3,7 +3,8 @@ import React from "react";
 import {
   BrowserRouter as Router,
   Route,
-  Switch
+  Switch,
+  Redirect
 } from "react-router-dom";
 import 'semantic-ui-css/semantic.min.css';
 
@@ -32,7 +33,7 @@ class App extends React.Component{
           <Route exact path={process.env.PUBLIC_URL + "/work"} component={Work} />
 
           <Route exact path={process.env.PUBLIC_URL + "/404"} component={InvalidPage} />
-
+          <Redirect to={process.env.PUBLIC_URL + "/404"} />
         </Switch>
       </Router>
       </div>
