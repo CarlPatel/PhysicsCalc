@@ -1,7 +1,7 @@
 import "./App.css";
 import React from "react";
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Route,
   Switch,
   Redirect
@@ -22,20 +22,20 @@ class App extends React.Component{
   render() {
     return (
       <div style={{backgroundColor: '#1b1c1d', minHeight: "100vh", height: "auto"}}>
-      <Router>
+      <BrowserRouter basename="/PhysicsCalc">
         <Switch>
-          <Route exact path={process.env.PUBLIC_URL + "/"} component={IndexPage} />
-          <Route exact path={process.env.PUBLIC_URL + "/equations"} component={Equations} />
-          <Route exact path={process.env.PUBLIC_URL + "/forces"} component={Forces} />
-          <Route exact path={process.env.PUBLIC_URL + "/kinomatics"} component={Kinomatics} />
-          <Route exact path={process.env.PUBLIC_URL + "/circular"} component={Circular} />
-          <Route exact path={process.env.PUBLIC_URL + "/gravation"} component={Gravation} />
-          <Route exact path={process.env.PUBLIC_URL + "/work"} component={Work} />
+          <Route exact path="/" component={IndexPage} />
+          <Route exact path="/equations" component={Equations} />
+          <Route exact path="/forces" component={Forces} />
+          <Route exact path="/kinomatics" component={Kinomatics} />
+          <Route exact path="/circular" component={Circular} />
+          <Route exact path="/gravation" component={Gravation} />
+          <Route exact path="/work" component={Work} />
 
-          <Route exact path={process.env.PUBLIC_URL + "/404"} component={InvalidPage} />
-          <Redirect to={process.env.PUBLIC_URL + "/404"} />
+          <Route exact path="/404" component={InvalidPage} />
+          <Redirect to="/404" />
         </Switch>
-      </Router>
+      </BrowserRouter>
       </div>
     );
   }
