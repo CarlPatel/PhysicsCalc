@@ -16,7 +16,7 @@ import Kinematics from "./pages/kinematics";
 import Circular from "./pages/circular";
 import Gravation from "./pages/gravation";
 import Work from "./pages/work";
-
+import API from "./pages/api/app";
 
 class App extends React.Component{
   render() {
@@ -31,6 +31,7 @@ class App extends React.Component{
           <Route exact path="/circular" component={Circular} />
           <Route exact path="/gravation" component={Gravation} />
           <Route exact path="/work" component={Work} />
+          <Route exact path="/api" component={API} />
 
           <Route exact path="/404" component={InvalidPage} />
           <Redirect to="/404" />
