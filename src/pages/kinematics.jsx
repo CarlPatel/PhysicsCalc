@@ -2,6 +2,7 @@ import React from "react";
 import 'semantic-ui-css/semantic.min.css';
 import Header from "./header";
 import { Container, Form, Button, Grid } from 'semantic-ui-react';
+import { API_URL } from "../api";
 
 class Kinematics extends React.Component{
 
@@ -42,7 +43,7 @@ class Kinematics extends React.Component{
 	var parameters = "?".concat("unit=kinematics&displacement=", displacement, "&initial%20velocity=", initialVelocity, "&final%20velocity=", finalVelocity, "&acceleration=", acceleration, "&time=", time);
 
 
-	var url = "https://physicscalcapi.herokuapp.com/api".concat(parameters);
+	var url = API_URL.concat(parameters);
 
 	fetch(url, {method:"GET", credentials: "include"})
 		.then((response) => response.json())

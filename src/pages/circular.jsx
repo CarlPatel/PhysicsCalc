@@ -2,6 +2,7 @@ import React from "react";
 import 'semantic-ui-css/semantic.min.css';
 import Header from "./header";
 import { Container, Form, Button } from 'semantic-ui-react';
+import { API_URL } from "../api";
 
 class Circular extends React.Component{
 
@@ -38,7 +39,7 @@ class Circular extends React.Component{
 	var parameters = "?".concat("unit=circular&force=", force, "&mass=", mass, "&velocity=", velocity, "&radius=", radius);
 
 
-	var url = "https://physicscalcapi.herokuapp.com/api".concat(parameters);
+	var url = API_URL.concat(parameters);
 
 	fetch(url, {method:"GET", credentials: "include"})
 		.then((response) => response.json())

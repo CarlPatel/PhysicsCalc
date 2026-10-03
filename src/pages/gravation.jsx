@@ -2,6 +2,7 @@ import React from "react";
 import 'semantic-ui-css/semantic.min.css';
 import Header from "./header";
 import { Container, Form, Button } from 'semantic-ui-react';
+import { API_URL } from "../api";
 
 class Gravation extends React.Component{
 
@@ -38,7 +39,7 @@ class Gravation extends React.Component{
 	var parameters = "?".concat("unit=gravitation&force=", force, "&mass1=", mass1, "&mass2=", mass2, "&radius=", radius);
 
 
-	var url = "https://physicscalcapi.herokuapp.com/api".concat(parameters);
+	var url = API_URL.concat(parameters);
 
 	fetch(url, {method:"GET", credentials: "include"})
 		.then((response) => response.json())
